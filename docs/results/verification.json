@@ -1,0 +1,455 @@
+{
+  "recorded_utc": "2026-11-25T05:07:48.402418+00:00",
+  "data_label": "SYNTHETIC PIPELINE TEST",
+  "seed": 42,
+  "epochs_completed": 4,
+  "selected_epoch": 2,
+  "split_counts": {
+    "train": 20,
+    "validation": 8,
+    "test": 8
+  },
+  "tests": {
+    "passed": 112,
+    "failed": 0,
+    "skipped": 1
+  },
+  "notebooks": [
+    {
+      "notebook": "01_data_exploration.ipynb",
+      "start_utc": "2026-11-25T04:58:34.399336+00:00",
+      "status": "passed",
+      "executed_code_cells": 4,
+      "end_utc": "2026-11-25T04:58:38.704856+00:00"
+    },
+    {
+      "notebook": "02_pair_generation.ipynb",
+      "start_utc": "2026-11-25T04:58:38.705857+00:00",
+      "status": "passed",
+      "executed_code_cells": 4,
+      "end_utc": "2026-11-25T04:58:43.233662+00:00"
+    },
+    {
+      "notebook": "03_baseline_retrieval.ipynb",
+      "start_utc": "2026-11-25T04:58:43.234666+00:00",
+      "status": "passed",
+      "executed_code_cells": 3,
+      "end_utc": "2026-11-25T04:58:47.071658+00:00"
+    },
+    {
+      "notebook": "04_model_training_and_evaluation.ipynb",
+      "start_utc": "2026-11-25T04:58:47.071658+00:00",
+      "status": "passed",
+      "executed_code_cells": 4,
+      "end_utc": "2026-11-25T04:58:52.510116+00:00"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "01",
+      "test": "tests/test_scenarios.py::test_scenario_01_happy_path_cpu",
+      "expected": "Prepare, train, evaluate both directions and write a labelled synthetic report",
+      "observed": "Synthetic prepare/train/evaluate completed; 8 held-out gallery pairs, both model directions and HTML report; CLI returned ranked hits",
+      "status": "PASS",
+      "elapsed_s": 4.393
+    },
+    {
+      "scenario": "02",
+      "test": "tests/test_scenarios.py::test_scenario_02_no_data",
+      "expected": "Missing scenes produce an actionable error and CLI status 2",
+      "observed": "Missing scene CSV produced contextual message and CLI exit 2",
+      "status": "PASS",
+      "elapsed_s": 0.009
+    },
+    {
+      "scenario": "03",
+      "test": "tests/test_scenarios.py::test_scenario_03_bad_configuration",
+      "expected": "Invalid paths, thresholds, patch sizes and batch sizes are rejected",
+      "observed": "Invalid path, negative patch size, out-of-range overlap and zero batch size each raised ValueError",
+      "status": "PASS",
+      "elapsed_s": 0.005
+    },
+    {
+      "scenario": "04",
+      "test": "tests/test_scenarios.py::test_scenario_04_cloudy_optical",
+      "expected": "All-cloud optical patches rejected with cloud_fraction reason",
+      "observed": "All-cloud fixtures produced zero accepted patches and cloud_fraction rejection reasons",
+      "status": "PASS",
+      "elapsed_s": 0.627
+    },
+    {
+      "scenario": "05",
+      "test": "tests/test_scenarios.py::test_scenario_05_time_mismatch",
+      "expected": "Time gaps beyond seven days rejected with time_gap reason",
+      "observed": "March optical vs January SAR produced zero accepted patches and time_gap reasons",
+      "status": "PASS",
+      "elapsed_s": 0.313
+    },
+    {
+      "scenario": "06",
+      "test": "tests/test_scenarios.py::test_scenario_06_geographic_leakage",
+      "expected": "Cross-split overlapping footprints rejected even with falsified block IDs",
+      "observed": "Overlapping copy with altered pair/block IDs failed the cross-split geography check",
+      "status": "PASS",
+      "elapsed_s": 0.726
+    },
+    {
+      "scenario": "07",
+      "test": "tests/test_scenarios.py::test_scenario_07_corrupt_raster_and_missing_band",
+      "expected": "Corrupt raster and missing bands raise useful errors and write traceback",
+      "observed": "Corrupt TIFF and band 999 raised descriptive errors; full traceback present in log",
+      "status": "PASS",
+      "elapsed_s": 0.151
+    },
+    {
+      "scenario": "08",
+      "test": "tests/test_scenarios.py::test_scenario_08_cpu_only",
+      "expected": "Small encoder forward pass works entirely on CPU",
+      "observed": "Both encoder outputs had shape [2,32] on CPU",
+      "status": "PASS",
+      "elapsed_s": 0.004
+    },
+    {
+      "scenario": "09",
+      "test": "tests/test_scenarios.py::test_scenario_09_gpu",
+      "expected": "Small CUDA forward pass works if CUDA available; otherwise explicitly skipped",
+      "observed": "CUDA unavailable; no GPU computation observed",
+      "status": "SKIP",
+      "elapsed_s": 0.0
+    },
+    {
+      "scenario": "10",
+      "test": "tests/test_scenarios.py::test_scenario_10_interrupted_training",
+      "expected": "One-epoch checkpoint resumes to epoch two with preserved history",
+      "observed": "Completed epoch 1 resumed to epoch 2; checkpoint epoch/history verified",
+      "status": "PASS",
+      "elapsed_s": 2.109
+    },
+    {
+      "scenario": "11",
+      "test": "tests/test_scenarios.py::test_scenario_11_empty_gallery",
+      "expected": "Empty gallery rejected with a clear ValueError",
+      "observed": "Empty gallery raised a clear ValueError",
+      "status": "PASS",
+      "elapsed_s": 0.001
+    },
+    {
+      "scenario": "12",
+      "test": "tests/test_scenarios.py::test_scenario_12_unexpected_exception",
+      "expected": "Unexpected exception writes traceback and yields concise CLI status 1",
+      "observed": "Injected RuntimeError produced CLI exit 1, concise error and full traceback in rotating log",
+      "status": "PASS",
+      "elapsed_s": 0.013
+    }
+  ],
+  "software": {
+    "python": "3.12.16",
+    "torch": "2.10.0+cpu",
+    "rasterio": "1.4.4",
+    "cuda_available": false
+  },
+  "metrics": {
+    "statistical_baseline": {
+      "optical_to_sar": {
+        "recall@1": 0.625,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.8125,
+        "queries": 8,
+        "gallery_size": 8,
+        "latency_ms_per_query": 0.02172499995367616,
+        "index_size_bytes": 12567,
+        "vector_bytes": 256,
+        "confidence_intervals_95": {
+          "recall@1": [
+            0.25,
+            1.0
+          ],
+          "recall@5": [
+            1.0,
+            1.0
+          ],
+          "recall@10": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.625,
+            1.0
+          ]
+        },
+        "strata": {
+          "geographic_block": {
+            "geo-2696bc3d57a6": {
+              "queries": 4,
+              "recall@1": 0.75,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.875
+            },
+            "geo-77d3bcd33968": {
+              "queries": 4,
+              "recall@1": 0.5,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.75
+            }
+          },
+          "land_cover": {
+            "synthetic_water": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.8125
+            }
+          },
+          "cloud_fraction": {
+            "0-5%": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.8125
+            }
+          },
+          "time_gap_days": {
+            "1-3": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.8125
+            }
+          }
+        }
+      },
+      "sar_to_optical": {
+        "recall@1": 0.625,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.7916666666666666,
+        "queries": 8,
+        "gallery_size": 8,
+        "latency_ms_per_query": 0.01722499990819415,
+        "index_size_bytes": 12567,
+        "vector_bytes": 256,
+        "confidence_intervals_95": {
+          "recall@1": [
+            0.25,
+            1.0
+          ],
+          "recall@5": [
+            1.0,
+            1.0
+          ],
+          "recall@10": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.5833333333333333,
+            1.0
+          ]
+        },
+        "strata": {
+          "geographic_block": {
+            "geo-2696bc3d57a6": {
+              "queries": 4,
+              "recall@1": 0.5,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.7083333333333334
+            },
+            "geo-77d3bcd33968": {
+              "queries": 4,
+              "recall@1": 0.75,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.875
+            }
+          },
+          "land_cover": {
+            "synthetic_water": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.7916666666666666
+            }
+          },
+          "cloud_fraction": {
+            "0-5%": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.7916666666666666
+            }
+          },
+          "time_gap_days": {
+            "1-3": {
+              "queries": 8,
+              "recall@1": 0.625,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.7916666666666666
+            }
+          }
+        }
+      }
+    },
+    "dual_encoder": {
+      "optical_to_sar": {
+        "recall@1": 0.25,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.53125,
+        "queries": 8,
+        "gallery_size": 8,
+        "latency_ms_per_query": 0.016712499984805618,
+        "index_size_bytes": 13335,
+        "vector_bytes": 1024,
+        "confidence_intervals_95": {
+          "recall@1": [
+            0.0,
+            0.625
+          ],
+          "recall@5": [
+            1.0,
+            1.0
+          ],
+          "recall@10": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.3645833333333333,
+            0.7502604166666668
+          ]
+        },
+        "strata": {
+          "geographic_block": {
+            "geo-2696bc3d57a6": {
+              "queries": 4,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.5416666666666666
+            },
+            "geo-77d3bcd33968": {
+              "queries": 4,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.5208333333333334
+            }
+          },
+          "land_cover": {
+            "synthetic_water": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.53125
+            }
+          },
+          "cloud_fraction": {
+            "0-5%": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.53125
+            }
+          },
+          "time_gap_days": {
+            "1-3": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.53125
+            }
+          }
+        }
+      },
+      "sar_to_optical": {
+        "recall@1": 0.25,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5416666666666666,
+        "queries": 8,
+        "gallery_size": 8,
+        "latency_ms_per_query": 0.016249999930550985,
+        "index_size_bytes": 13335,
+        "vector_bytes": 1024,
+        "confidence_intervals_95": {
+          "recall@1": [
+            0.0,
+            0.625
+          ],
+          "recall@5": [
+            1.0,
+            1.0
+          ],
+          "recall@10": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.3645833333333333,
+            0.7502604166666668
+          ]
+        },
+        "strata": {
+          "geographic_block": {
+            "geo-2696bc3d57a6": {
+              "queries": 4,
+              "recall@1": 0.5,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.7083333333333334
+            },
+            "geo-77d3bcd33968": {
+              "queries": 4,
+              "recall@1": 0.0,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.375
+            }
+          },
+          "land_cover": {
+            "synthetic_water": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.5416666666666666
+            }
+          },
+          "cloud_fraction": {
+            "0-5%": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.5416666666666666
+            }
+          },
+          "time_gap_days": {
+            "1-3": {
+              "queries": 8,
+              "recall@1": 0.25,
+              "recall@5": 1.0,
+              "recall@10": 1.0,
+              "mrr": 0.5416666666666666
+            }
+          }
+        }
+      }
+    }
+  },
+  "relevance": "Exactly the manifest pair_id; nearby alternative patches may be unlabelled positives.",
+  "uncertainty": "95% query-bootstrap percentile intervals, 200 resamples; conditional on this gallery, not spatial or training-seed confidence."
+}

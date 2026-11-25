@@ -1,0 +1,13 @@
+{
+  "name": "Pune, Maharashtra, India",
+  "bbox_wgs84": [73.8, 18.45, 73.9, 18.55],
+  "start_inclusive": "2024-01-01T00:00:00Z",
+  "end_exclusive": "2024-01-16T00:00:00Z",
+  "target_crs": "EPSG:32643",
+  "target_resolution_m": 10,
+  "max_candidates_per_sensor": 4,
+  "sar_product": "Sentinel-1 IW GRDH dual VV/VH",
+  "optical_product": "Sentinel-2 L2A, scene cloud cover <=20 percent",
+  "purpose": "Small candidate AOI; not an acquired, paired, or evaluated dataset",
+  "source": "https://dataspace.copernicus.eu/explore-data"
+}

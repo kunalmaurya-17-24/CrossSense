@@ -1,0 +1,39 @@
+seed: 42
+data:
+  patch_size: 32
+  stride: 32
+  resolution_m: 10.0
+  target_crs: EPSG:32643
+  sar_bands: [1, 2]
+  optical_bands: [2, 3, 4, 8]
+  sar_units: db
+  sar_clip_db: [-30.0, 5.0]
+  optical_scale: 10000.0
+  optical_clip: [0.0, 1.0]
+  min_valid_fraction: 0.8
+  max_cloud_fraction: 0.2
+  max_time_gap_days: 7.0
+  min_overlap: 0.9
+  require_cloud_mask: false
+  allow_author_pairs_without_time: false
+  geographic_exclusion_m: 500.0
+  block_size_m: 10000.0
+  split_buffer_m: 500.0
+  split_fractions: [0.6, 0.2, 0.2]
+model:
+  sar_channels: 2
+  optical_channels: 4
+  embedding_dim: 32
+  width: 16
+  freeze_backbones: false
+training:
+  batch_size: 8
+  epochs: 4
+  lr: 0.001
+  temperature: 0.1
+  device: cpu
+  patience: 5
+  num_workers: 0
+logging:
+  level: INFO
+  output_dir: outputs/logs

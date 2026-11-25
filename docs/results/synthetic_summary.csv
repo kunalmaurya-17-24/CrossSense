@@ -1,0 +1,5 @@
+method,direction,recall@1,recall@5,recall@10,mrr,latency_ms_per_query,index_size_bytes
+statistical_baseline,optical_to_sar,0.625,1.0,1.0,0.8125,0.02172499995367616,12567
+statistical_baseline,sar_to_optical,0.625,1.0,1.0,0.7916666666666666,0.01722499990819415,12567
+dual_encoder,optical_to_sar,0.25,1.0,1.0,0.53125,0.016712499984805618,13335
+dual_encoder,sar_to_optical,0.25,1.0,1.0,0.5416666666666666,0.016249999930550985,13335

@@ -1,0 +1,24 @@
+{
+  "source": "SEN12MS",
+  "documented_source": "https://mediatum.ub.tum.de/1474000",
+  "access_documentation": "https://github.com/schmitt-muc/SEN12MS/issues/4",
+  "url": "ftp://dataserv.ub.tum.de/",
+  "attempted_files": [
+    "ROIs2017_winter_s1.tar.gz",
+    "ROIs2017_winter_s2.tar.gz"
+  ],
+  "start_time": "2026-11-25T04:46:58.610124+00:00",
+  "end_time": "2026-11-25T04:47:04.060525+00:00",
+  "max_bytes": 52428800,
+  "time_limit_s": 90,
+  "free_disk_bytes": 431207309312,
+  "expected_sizes": {
+    "ROIs2017_winter_s1.tar.gz": 14379439087
+  },
+  "bytes_received": 0,
+  "retry_count": 0,
+  "status": "stopped",
+  "error": "Expected size 14379439087 bytes exceeds maximum 52428800 bytes; no body downloaded",
+  "files": [],
+  "manual_next_steps": "Open the official mediaTUM record, review its terms, obtain a small matched S1/S2 subset through its browser or author-documented FTP/rsync route, then run local verification and provide acquisition-time/cloud provenance. No full seasonal archive is authorized above the configured cap. Continue pipeline tests with source=synthetic."
+}

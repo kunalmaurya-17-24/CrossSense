@@ -1,0 +1,407 @@
+{
+  "source": "Copernicus Data Space Ecosystem OData",
+  "endpoint": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products",
+  "queried_at": "2026-11-25T04:47:09.423292+00:00",
+  "aoi_name": "Pune, India",
+  "bbox_wgs84": [
+    73.8,
+    18.45,
+    73.9,
+    18.55
+  ],
+  "start_inclusive": "2024-01-01T00:00:00Z",
+  "end_exclusive": "2024-01-16T00:00:00Z",
+  "target_grid_crs": "EPSG:32643",
+  "target_resolution_m": 10,
+  "metadata_only": true,
+  "raster_downloaded": false,
+  "products": [
+    {
+      "product_id": "29019bd2-b73a-4172-808c-067490d7a855",
+      "name": "S1A_IW_GRDH_1SDV_20240108T005529_20240108T005554_052008_0648EF_EDDE.SAFE",
+      "sensor": "sar",
+      "acquisition_start": "2024-01-08T00:55:29.268837Z",
+      "acquisition_end": "2024-01-08T00:55:54.267622Z",
+      "orbit_direction": "DESCENDING",
+      "relative_orbit_number": 136,
+      "orbit_number": 52008,
+      "tile_id": null,
+      "processing_level": "LEVEL1",
+      "processing_baseline": null,
+      "cloud_cover_percent": null,
+      "polarisation_channels": "VV&VH",
+      "footprint": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.405373,
+              17.155962
+            ],
+            [
+              75.719543,
+              18.666792
+            ],
+            [
+              73.338799,
+              19.098915
+            ],
+            [
+              73.045639,
+              17.591597
+            ],
+            [
+              75.405373,
+              17.155962
+            ]
+          ]
+        ]
+      },
+      "footprint_crs": "EPSG:4326",
+      "raster_crs": null,
+      "raster_crs_status": "inspect after local preparation",
+      "content_length_bytes": 1717781881,
+      "checksums": [
+        {
+          "Value": "6591542b240e1e065bc7fa984efff780",
+          "Algorithm": "MD5",
+          "ChecksumDate": "2026-06-03T12:21:48.116928Z"
+        },
+        {
+          "Value": "0814ece1e2edf3067be92d606e379b017f80ad4f3d4bbef1771bcb67d014a461",
+          "Algorithm": "BLAKE3",
+          "ChecksumDate": "2026-06-03T12:21:51.575285Z"
+        }
+      ],
+      "online": true,
+      "source": "Copernicus Data Space Ecosystem",
+      "license_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+      "attribution": "Contains Copernicus Sentinel data (2024); modified by CrossSense after preparation",
+      "attributes": {
+        "origin": "ESA",
+        "datatakeID": 411887,
+        "timeliness": "Fast-24h",
+        "cycleNumber": 311,
+        "orbitNumber": 52008,
+        "sliceNumber": 16,
+        "totalSlices": 19,
+        "productClass": "S",
+        "processorName": "Sentinel-1 IPF",
+        "orbitDirection": "DESCENDING",
+        "processingDate": "2024-01-08T06:43:06.780625Z",
+        "operationalMode": "IW",
+        "processingLevel": "LEVEL1",
+        "swathIdentifier": "IW",
+        "processingCenter": "Production Service-SERCO",
+        "processorVersion": "003.71",
+        "segmentStartTime": "2024-01-08T00:49:10.567000Z",
+        "sliceProductFlag": false,
+        "platformShortName": "SENTINEL-1",
+        "productComposition": "Slice",
+        "instrumentShortName": "SAR",
+        "relativeOrbitNumber": 136,
+        "polarisationChannels": "VV&VH",
+        "platformSerialIdentifier": "A",
+        "instrumentConfigurationID": 7,
+        "startTimeFromAscendingNode": 2660463.0,
+        "completionTimeFromAscendingNode": 2685462.0,
+        "productType": "IW_GRDH_1S",
+        "beginningDateTime": "2024-01-08T00:55:29.268837Z",
+        "endingDateTime": "2024-01-08T00:55:54.267622Z"
+      }
+    },
+    {
+      "product_id": "dea00f59-81bd-478f-b6b0-5a4bea0ba454",
+      "name": "S1A_IW_GRDH_1SDV_20240108T005529_20240108T005554_052008_0648EF_2418_COG.SAFE",
+      "sensor": "sar",
+      "acquisition_start": "2024-01-08T00:55:29.268837Z",
+      "acquisition_end": "2024-01-08T00:55:54.267622Z",
+      "orbit_direction": "DESCENDING",
+      "relative_orbit_number": 136,
+      "orbit_number": 52008,
+      "tile_id": null,
+      "processing_level": "LEVEL1",
+      "processing_baseline": null,
+      "cloud_cover_percent": null,
+      "polarisation_channels": "VV&VH",
+      "footprint": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.405373,
+              17.155962
+            ],
+            [
+              75.719543,
+              18.666792
+            ],
+            [
+              73.338799,
+              19.098915
+            ],
+            [
+              73.045639,
+              17.591597
+            ],
+            [
+              75.405373,
+              17.155962
+            ]
+          ]
+        ]
+      },
+      "footprint_crs": "EPSG:4326",
+      "raster_crs": null,
+      "raster_crs_status": "inspect after local preparation",
+      "content_length_bytes": 1212078259,
+      "checksums": [
+        {
+          "Value": "27420d5169b5e5281183d2c4e30fd7da",
+          "Algorithm": "MD5",
+          "ChecksumDate": "2026-06-03T12:22:10.502728Z"
+        },
+        {
+          "Value": "446ae58c2dfa934ec66bd4aa2adab3e7f7235a269946de93a079f2ef55047c26",
+          "Algorithm": "BLAKE3",
+          "ChecksumDate": "2026-06-03T12:22:13.028681Z"
+        }
+      ],
+      "online": true,
+      "source": "Copernicus Data Space Ecosystem",
+      "license_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+      "attribution": "Contains Copernicus Sentinel data (2024); modified by CrossSense after preparation",
+      "attributes": {
+        "origin": "CLOUDFERRO",
+        "datatakeID": 411887,
+        "timeliness": "Fast-24h",
+        "cycleNumber": 311,
+        "orbitNumber": 52008,
+        "sliceNumber": 16,
+        "productClass": "S",
+        "processorName": "Sentinel-1 IPF",
+        "orbitDirection": "DESCENDING",
+        "processingDate": "2024-01-08T08:06:50.281000Z",
+        "operationalMode": "IW",
+        "processingLevel": "LEVEL1",
+        "swathIdentifier": "IW",
+        "processingCenter": "Production Service-SERCO",
+        "processorVersion": "003.71",
+        "platformShortName": "SENTINEL-1",
+        "instrumentShortName": "SAR",
+        "relativeOrbitNumber": 136,
+        "polarisationChannels": "VV&VH",
+        "platformSerialIdentifier": "A",
+        "startTimeFromAscendingNode": 2660463.0,
+        "completionTimeFromAscendingNode": 2685462.0,
+        "productType": "IW_GRDH_1S-COG",
+        "beginningDateTime": "2024-01-08T00:55:29.268837Z",
+        "endingDateTime": "2024-01-08T00:55:54.267622Z"
+      }
+    },
+    {
+      "product_id": "a7691269-5d4e-4ab7-803c-b6f3f2501869",
+      "name": "S2A_MSIL2A_20240104T053221_N0510_R105_T43QCA_20240104T083245.SAFE",
+      "sensor": "optical",
+      "acquisition_start": "2024-01-04T05:32:21.024000Z",
+      "acquisition_end": "2024-01-04T05:32:21.024000Z",
+      "orbit_direction": null,
+      "relative_orbit_number": 105,
+      "orbit_number": 44575,
+      "tile_id": "43QCA",
+      "processing_level": "S2MSI2A",
+      "processing_baseline": null,
+      "cloud_cover_percent": 3.754334,
+      "polarisation_channels": null,
+      "footprint": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.10054524362099,
+              18.95430437299046
+            ],
+            [
+              73.11113444182342,
+              17.99092482066246
+            ],
+            [
+              74.14798627078527,
+              17.99825754908623
+            ],
+            [
+              74.14306577749612,
+              18.9905378674023
+            ],
+            [
+              73.10703019286875,
+              18.98282223816982
+            ],
+            [
+              73.10054524362099,
+              18.95430437299046
+            ]
+          ]
+        ]
+      },
+      "footprint_crs": "EPSG:4326",
+      "raster_crs": null,
+      "raster_crs_status": "inspect after local preparation",
+      "content_length_bytes": 1198561256,
+      "checksums": [
+        {
+          "Value": "ec7603178f172f8dcd9c020b750b4651",
+          "Algorithm": "MD5",
+          "ChecksumDate": "2026-05-24T12:40:59.943460Z"
+        },
+        {
+          "Value": "a49737b973b796c5c1f1e6c1cddfe1fc265b977d0c8048830f6b4b5e050a0a6a",
+          "Algorithm": "BLAKE3",
+          "ChecksumDate": "2026-05-24T12:41:01.707648Z"
+        }
+      ],
+      "online": true,
+      "source": "Copernicus Data Space Ecosystem",
+      "license_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+      "attribution": "Contains Copernicus Sentinel data (2024); modified by CrossSense after preparation",
+      "attributes": {
+        "origin": "ESA",
+        "tileId": "43QCA",
+        "cloudCover": 3.754334,
+        "datastripId": "S2A_OPER_MSI_L2A_DS_2APS_20240104T083245_S20240104T053220_N05.10",
+        "orbitNumber": 44575,
+        "sourceProduct": "S2A_OPER_MSI_L2A_TL_2APS_20240104T083245_A044575_T43QCA_N05.10,S2A_OPER_MSI_L2A_DS_2APS_20240104T083245_S20240104T053220_N05.10",
+        "processingDate": "2024-01-04T08:32:45.000000Z",
+        "productGroupId": "GS2A_20240104T053221_044575_N05.10",
+        "operationalMode": "INS-NOBS",
+        "processingLevel": "S2MSI2A",
+        "processorVersion": "05.10",
+        "granuleIdentifier": "S2A_OPER_MSI_L2A_TL_2APS_20240104T083245_A044575_T43QCA_N05.10",
+        "platformShortName": "SENTINEL-2",
+        "instrumentShortName": "MSI",
+        "relativeOrbitNumber": 105,
+        "sourceProductOriginDate": "2024-01-04T09:39:43.473Z,2024-01-04T09:38:02.253Z",
+        "platformSerialIdentifier": "A",
+        "productType": "S2MSI2A",
+        "beginningDateTime": "2024-01-04T05:32:21.024000Z",
+        "endingDateTime": "2024-01-04T05:32:21.024000Z"
+      }
+    },
+    {
+      "product_id": "65919e39-7595-487f-a87a-6e676ea79081",
+      "name": "S2A_MSIL2A_20240114T053201_N0510_R105_T43QCA_20240114T084852.SAFE",
+      "sensor": "optical",
+      "acquisition_start": "2024-01-14T05:32:01.024000Z",
+      "acquisition_end": "2024-01-14T05:32:01.024000Z",
+      "orbit_direction": null,
+      "relative_orbit_number": 105,
+      "orbit_number": 44718,
+      "tile_id": "43QCA",
+      "processing_level": "S2MSI2A",
+      "processing_baseline": null,
+      "cloud_cover_percent": 0.051579,
+      "polarisation_channels": null,
+      "footprint": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.10103151947784,
+              18.91006417573092
+            ],
+            [
+              73.11113444182342,
+              17.99092482066246
+            ],
+            [
+              74.14798627078527,
+              17.99825754908623
+            ],
+            [
+              74.14306577749612,
+              18.9905378674023
+            ],
+            [
+              73.11765440943374,
+              18.98290135950225
+            ],
+            [
+              73.11391401552174,
+              18.96656024692065
+            ],
+            [
+              73.10103151947784,
+              18.91006417573092
+            ]
+          ]
+        ]
+      },
+      "footprint_crs": "EPSG:4326",
+      "raster_crs": null,
+      "raster_crs_status": "inspect after local preparation",
+      "content_length_bytes": 1227148741,
+      "checksums": [
+        {
+          "Value": "55ffbf806e1615c47acaccb321ad9761",
+          "Algorithm": "MD5",
+          "ChecksumDate": "2026-05-24T12:29:58.910421Z"
+        },
+        {
+          "Value": "9611816cbb814ccc49fb028d54b7dc1ccc2b6a8e882007766eed3480491491a9",
+          "Algorithm": "BLAKE3",
+          "ChecksumDate": "2026-05-24T12:30:00.857695Z"
+        }
+      ],
+      "online": true,
+      "source": "Copernicus Data Space Ecosystem",
+      "license_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+      "attribution": "Contains Copernicus Sentinel data (2024); modified by CrossSense after preparation",
+      "attributes": {
+        "origin": "ESA",
+        "tileId": "43QCA",
+        "cloudCover": 0.051579,
+        "datastripId": "S2A_OPER_MSI_L2A_DS_2APS_20240114T084852_S20240114T053155_N05.10",
+        "orbitNumber": 44718,
+        "sourceProduct": "S2A_OPER_MSI_L2A_TL_2APS_20240114T084852_A044718_T43QCA_N05.10,S2A_OPER_MSI_L2A_DS_2APS_20240114T084852_S20240114T053155_N05.10",
+        "processingDate": "2024-01-14T08:48:52.000000Z",
+        "productGroupId": "GS2A_20240114T053201_044718_N05.10",
+        "operationalMode": "INS-NOBS",
+        "processingLevel": "S2MSI2A",
+        "processorVersion": "05.10",
+        "granuleIdentifier": "S2A_OPER_MSI_L2A_TL_2APS_20240114T084852_A044718_T43QCA_N05.10",
+        "platformShortName": "SENTINEL-2",
+        "instrumentShortName": "MSI",
+        "relativeOrbitNumber": 105,
+        "sourceProductOriginDate": "2024-01-14T09:50:27.188Z,2024-01-14T09:50:51.348Z",
+        "platformSerialIdentifier": "A",
+        "productType": "S2MSI2A",
+        "beginningDateTime": "2024-01-14T05:32:01.024000Z",
+        "endingDateTime": "2024-01-14T05:32:01.024000Z"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "sensor": "sar",
+      "params": {
+        "$filter": "Collection/Name eq 'SENTINEL-1' and OData.CSC.Intersects(area=geography'SRID=4326;POLYGON((73.8 18.45,73.9 18.45,73.9 18.55,73.8 18.55,73.8 18.45))') and ContentDate/Start ge 2024-01-01T00:00:00Z and ContentDate/Start lt 2024-01-16T00:00:00Z and contains(Name,'_IW_GRDH_1SDV_')",
+        "$expand": "Attributes",
+        "$top": 4,
+        "$orderby": "ContentDate/Start asc"
+      },
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "sensor": "optical",
+      "params": {
+        "$filter": "Collection/Name eq 'SENTINEL-2' and OData.CSC.Intersects(area=geography'SRID=4326;POLYGON((73.8 18.45,73.9 18.45,73.9 18.55,73.8 18.55,73.8 18.45))') and ContentDate/Start ge 2024-01-01T00:00:00Z and ContentDate/Start lt 2024-01-16T00:00:00Z and Attributes/OData.CSC.StringAttribute/any(a:a/Name eq 'productType' and a/OData.CSC.StringAttribute/Value eq 'S2MSI2A') and Attributes/OData.CSC.DoubleAttribute/any(a:a/Name eq 'cloudCover' and a/OData.CSC.DoubleAttribute/Value le 20)",
+        "$expand": "Attributes",
+        "$top": 4,
+        "$orderby": "ContentDate/Start asc"
+      },
+      "status": "ok",
+      "count": 2
+    }
+  ]
+}
